@@ -12,12 +12,10 @@ angular.module("truncate", [])
       else
         # trim the space from the right of the text
         sText = sText.replace(/\s+$/, '')
-        # sText = sText.substr(0, sText.length - 1)  while sText.charAt(sText.length - 1) is " "
       return sText + "#{sAppend}"
     sText
 ).filter "words", ->
   (sText, iWordsLength, sAppend = '...') ->
-    # return sText  if isNaN(iWordsLength)
     iWordsLength = 10 if isNaN(iWordsLength)
     return ""  if iWordsLength <= 0
     if sText
